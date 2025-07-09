@@ -1,4 +1,4 @@
-// 다크모드
+//1. 다크모드
 const btn = document.getElementById('toggleMode');
 const img = document.getElementById('btnImg')
 
@@ -15,7 +15,7 @@ btn.addEventListener('click', () => {
   }
 });
 
-// 스크롤 애니메이션
+//2. 스크롤 애니메이션
 const sections = document.querySelectorAll('.fade-in-section');
 
 const observer = new IntersectionObserver((entries, obs)=>{
@@ -35,7 +35,7 @@ sections.forEach(section => {
   observer.observe(section);
 });
 
-// 모달띄우기
+//3. 모달띄우기
 const cards = document.querySelectorAll('.card');
 const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('closeModal');
@@ -53,18 +53,11 @@ window.onclick = (e) => {
   if (e.target === modal) modal.classList.remove('active');
 };
 
-//rollUpBtn 
+//4. rollUpBtn 
 const rollUpBtn = document.getElementById('upwardBtn');
 
 rollUpBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) { // 300px 이상 스크롤 시
-    rollUpBtn.style.display = 'block';
-  } else {
-    rollUpBtn.style.display = 'none';
-  }
-});
 

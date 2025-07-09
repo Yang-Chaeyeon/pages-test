@@ -14,7 +14,8 @@ body {
   padding-top: 20px;
   padding-left: 100px;
   padding-right: 100px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  background-color: #e7e4a2;
 }
 
 body.dark-mode {
@@ -24,7 +25,8 @@ body.dark-mode {
 
 body.dark-mode #navi {
   background: #181818;
-  color: #f1f1f1; 
+  color: #e7e4a2; 
+  border-bottom: 2px solid #e7e4a2;
 }
 
 /* 다크모드일 때만 색 반전 */
@@ -32,17 +34,18 @@ body.dark-mode #btnImg {
   filter: invert(1);
 }
 
+body.dark-mode .logo{
+  color: #e7e4a2; 
+}
+
+
 #toggleMode {
   border: none;
   /* 테두리 제거 */
   background: none;
   /* 배경색 제거 */
-  padding: 0;
-  /* 필요에 따라 패딩도 제거 */
   cursor: pointer;
   /* 마우스 오버 시 손가락 모양 */
-  outline: none;
-  /* 포커스 테두리도 없애고 싶으면 추가 */
 }
 
 #btnImg {
@@ -54,7 +57,7 @@ body.dark-mode #btnImg {
 
 /* 섹션 */
 section {
-  scroll-margin-top: 220px;
+  scroll-margin-top: 260px;
 }
 
 .fade-in-section {
@@ -62,7 +65,7 @@ section {
   /*아직 안보임*/
   transform: translateY(30px);
   /*Y축기준 30px밑에서 대기*/
-  transition: opacity 1.5s ease, transform 1.5s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .fade-in-section.visible {
@@ -72,32 +75,37 @@ section {
 
 
 .logo {
-  font-family: "Michroma", sans-serif;
+  font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: normal;
 
   line-height: 100px;
   display: block;
-  font-size: 50px;
+  font-size: 70px;
   text-decoration: none;
   /* 링크의 밑줄 제거 */
   color: inherit;
   /* 링크의 색상 제거 */
 }
 
+.logo:focus {
+  outline: none;
+}
+
 #navi {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 70px;
+  padding-bottom: 20px;
   width: 100%;
   height: 60px;
   position: relative;
   text-align: center;
+  border-bottom: 2px solid black;
 
   position: sticky;
   top: 0;
-  background: #fff;
+  background: #e7e4a2;
   z-index: 1000;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 #navi ul {
@@ -106,7 +114,7 @@ section {
   width: 100%;
   /* 메뉴가 양 끝으로 벌어짐 */
   box-sizing: border-box;
-  padding: 0 120px;
+  padding: 0 100px;
   margin: 0;
 }
 
@@ -114,16 +122,14 @@ section {
   list-style: none;
   float: left;
   line-height: 50px;
-  padding: 0 30px;
-  font-size: 25px;
+  font-size: 33px;
 
 }
 
 #navi ul li a {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  transition: color 0.3s ease;
 
   text-decoration: none;
   /* 링크의 밑줄 제거 */
@@ -143,15 +149,6 @@ section {
   margin: 50px 0 200px 0;
 }
 
-#contact {
-  height: 400px;
-  display: flex;
-  justify-content: flex-end;
-  border-radius: 30px;
-  font-size: 20px;
-  margin: 50px 0 250px 0;
-}
-
 .title {
   font-size: 40px;
   display: flex;
@@ -160,15 +157,11 @@ section {
 }
 
 #aboutBox {
-  /* border-radius: 50px; */
-  /* border: 2px solid #000000; */
-  /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
-
 }
 
 #profile-photo {
@@ -180,11 +173,35 @@ section {
   background-color: #e5ebef;
   justify-content: flex-end;
   margin: 30px;
+  border: 4px solid black;
   /* 이미지가 없을 때 배경색 */
 }
 
-#aboutText {
-  margin: 0 40px 0 20px;
+#aboutText1 {
+  margin: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#aboutText1 h1{
+  font-size: 50px;
+  margin:0;
+}
+
+#aboutText1 a{
+  width: 30px;
+  height: 30px;
+}
+
+/* #aboutText1 a:hover{
+  font-size: 50px;
+  margin:0;
+  transition: all 0.3s ease;
+} */
+
+#aboutText2 {
+  margin: 30px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,12 +209,14 @@ section {
 }
 
 
+
 #contactBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 50px;
-  border: 2px solid #000000;
+  border: 4px solid black;
+  background-color: #e5ebef;
   /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); */
   width: 40%;
   font-size: 25px;
@@ -211,8 +230,22 @@ section {
   color: inherit;
   /* 링크의 색상 제거 */
 }
+#contactBox p :hover{
+  color:#757b7f;
+}
 
-#stackTitle {
+
+.contactImg{
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+
+
+
+#skillTitle {
   font-size: 40px;
   display: flex;
   justify-content: center;
@@ -223,9 +256,10 @@ section {
 .Imgs {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.stackImg {
+.skillImg {
   width: 100px;
   height: 100px;
   background-color: #e5ebef;
@@ -243,14 +277,17 @@ section {
 .cards {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 50px;
   margin-bottom: 200px;
 }
 
 .card {
+  border: 4px solid black;
   border-radius: 35px 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #e5ebef;
   width: 240px;
   height: 180px;
   font-size: 15px;
@@ -288,7 +325,7 @@ section {
 }
 
 .modal-content {
-  background: #fff;
+  background: #e5ebef;
   padding: 30px 25px;
   border-radius: 12px;
   width: 500px;
@@ -307,10 +344,31 @@ section {
   color: #888;
 }
 
+
+#contact {
+  height: 400px;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 30px;
+  font-size: 20px;
+  margin: 50px 0 250px 0;
+}
+
+
 footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 100px;
+  
+}
+
+footer p {
+  margin-top: 100px;
+  color: #aaa;              /* 연한 회색 */
+  opacity: 0.9;             /* 투명도 추가 (0~1, 숫자가 작을수록 더 연함) */
+  font-size: 0.95em;        /* (선택) 글자 크기 살짝 줄이기 */
+  letter-spacing: 0.02em;   /* (선택) 자간 살짝 넓히기 */
 }
 
 #upwardBtn {
@@ -318,12 +376,8 @@ footer {
   /* 테두리 제거 */
   background: none;
   /* 배경색 제거 */
-  padding: 0;
-  /* 필요에 따라 패딩도 제거 */
   cursor: pointer;
   /* 마우스 오버 시 손가락 모양 */
-  outline: none;
-  /* 포커스 테두리도 없애고 싶으면 추가 */
 }
 
 #upwardImg {
