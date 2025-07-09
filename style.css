@@ -1,9 +1,8 @@
-style.csshtml {
+html {
   scroll-behavior: smooth;
-  
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
 }
@@ -12,9 +11,9 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding-top: 30px;
-  padding-left: 90px;
-  padding-right: 90px;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   transition: all 0.3s;
 }
 
@@ -23,13 +22,56 @@ body.dark-mode {
   color: #f1f1f1;
 }
 
-section {
-  scroll-margin-top: 220px;
-  /* 네비게이션 바 높이만큼 */
+body.dark-mode #navi {
+  background: #181818;
+  color: #f1f1f1; 
+}
+
+/* 다크모드일 때만 색 반전 */
+body.dark-mode #btnImg {
+  filter: invert(1);
+}
+
+#toggleMode {
+  border: none;
+  /* 테두리 제거 */
+  background: none;
+  /* 배경색 제거 */
+  padding: 0;
+  /* 필요에 따라 패딩도 제거 */
+  cursor: pointer;
+  /* 마우스 오버 시 손가락 모양 */
+  outline: none;
+  /* 포커스 테두리도 없애고 싶으면 추가 */
+}
+
+#btnImg {
+  width: 40px;
+  height: 40px;
+  transition: filter 0.3s;
 }
 
 
-.michroma-regular {
+/* 섹션 */
+section {
+  scroll-margin-top: 220px;
+}
+
+.fade-in-section {
+  opacity: 0;
+  /*아직 안보임*/
+  transform: translateY(30px);
+  /*Y축기준 30px밑에서 대기*/
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+.logo {
   font-family: "Michroma", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -37,6 +79,10 @@ section {
   line-height: 100px;
   display: block;
   font-size: 50px;
+  text-decoration: none;
+  /* 링크의 밑줄 제거 */
+  color: inherit;
+  /* 링크의 색상 제거 */
 }
 
 #navi {
@@ -51,6 +97,7 @@ section {
   top: 0;
   background: #fff;
   z-index: 1000;
+  transition: all 0.3s;
 }
 
 #navi ul {
@@ -92,12 +139,11 @@ section {
   height: 400px;
   display: flex;
   justify-content: flex-start;
-  border-radius: 30px;
   font-size: 20px;
   margin: 50px 0 200px 0;
 }
 
-#contatct {
+#contact {
   height: 400px;
   display: flex;
   justify-content: flex-end;
@@ -105,8 +151,6 @@ section {
   font-size: 20px;
   margin: 50px 0 250px 0;
 }
-
-
 
 .title {
   font-size: 40px;
@@ -116,8 +160,8 @@ section {
 }
 
 #aboutBox {
-  border-radius: 50px;
-  border: 2px solid #000000;
+  /* border-radius: 50px; */
+  /* border: 2px solid #000000; */
   /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); */
   display: flex;
   flex-direction: row;
@@ -172,21 +216,20 @@ section {
   font-size: 40px;
   display: flex;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 150px;
   margin-bottom: 70px;
 }
 
-.Imgs{
+.Imgs {
   display: flex;
   justify-content: center;
-;
 }
 
 .stackImg {
   width: 100px;
   height: 100px;
   background-color: #e5ebef;
-  margin:25px 40px;
+  margin: 25px 40px;
 }
 
 #projectTitle {
@@ -213,4 +256,81 @@ section {
   font-size: 15px;
   padding: 20px;
   margin: 20px;
+  cursor: pointer;
+  transition: transform 0.7s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+}
+
+.card:hover{
+   transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 1.5px 3px rgba(0,0,0,0.10);
+}
+
+.modal {
+  display: none;
+  /*모달 숨기기*/
+  position: fixed;
+  z-index: 3000;
+  /*다른 요소 위에 표시*/
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 500px;
+  height: 500px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #888;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+#upwardBtn {
+  border: none;
+  /* 테두리 제거 */
+  background: none;
+  /* 배경색 제거 */
+  padding: 0;
+  /* 필요에 따라 패딩도 제거 */
+  cursor: pointer;
+  /* 마우스 오버 시 손가락 모양 */
+  outline: none;
+  /* 포커스 테두리도 없애고 싶으면 추가 */
+}
+
+#upwardImg {
+  width: 45px;
+  height: 45px;
+}
+
+body.dark-mode #upwardBtn {
+  filter: invert(1);
 }

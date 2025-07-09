@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -11,27 +10,33 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Michroma&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
     rel="stylesheet">
-  <title>YANGCHAE</title>
-  <script defer src="app.js" ></script>
+  <title>chaeyeon</title>
+  <script defer src="app.js"></script>
 </head>
+
 <body>
+
+  <!-- 헤더 -->
   <header>
-  <a class="michroma-regular">Yang-Chaeyeon</a>
-  <button id="toggleMode">darkmode</button>
+    <a class="logo" href="#">Yang-Chaeyeon</a>
+    <button id="toggleMode">
+      <img id="btnImg" src="./img/light_mode.svg" alt="버튼 이미지">
+    </button>
   </header>
 
+  <!-- 네비게이션 바 -->
   <nav id="navi">
     <ul>
       <li><a href="#about">ABOUT</a></li>
-      <li><a href="#contatct">CONTACT</a></li>
+      <li><a href="#contact">CONTACT</a></li>
       <li><a href="#stack">STACK</a></li>
       <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#">HIHI</a></li>
+      <!-- <li><a href="#">HIHI</a></li> -->
     </ul>
   </nav>
 
-
-  <section id="about">
+  <!-- about 섹션 -->
+  <section id="about" class="fade-in-section">
     <div id="aboutBox">
       <div id="profile-photo"></div>
       <div id="aboutText">
@@ -42,7 +47,9 @@
     <div class="title">ABOUT</div>
   </section>
 
-  <section id="contatct">
+
+  <!-- contact 섹션 -->
+  <section id="contact" class="fade-in-section">
     <div class="title">CONTACT</div>
     <div id="contactBox">
       <p><a href="mailto:yeon9915@gmail.com">E-mail : yeon9915@gmail.com</a>
@@ -52,7 +59,10 @@
     </div>
   </section>
 
-  <section id="stack">
+
+  <!-- stack 섹션 -->
+
+  <section id="stack" class="fade-in-section">
     <div id="stackTitle">STACK</div>
     <div class="Imgs">
       <div class="stackImg">11</div>
@@ -66,44 +76,44 @@
       <div class="stackImg">77</div>
     </div>
     </div>
-
   </section>
 
-  <section id="projects">
+
+  <!-- project 섹션 -->
+  <section id="projects" class="fade-in-section">
     <div id="projectTitle">PROJECTS</div>
     <div class="cards">
 
-      <div class="card">
-        <div class="container">
-          <h4><b>------</b></h4>
-          <p>------</p>
-        </div>
+      <div class="card" onclick="showModal()">
       </div>
 
-      <div class="card">
-        <div class="container">
-          <h4><b>------</b></h4>
-          <p>------</p>
-        </div>
+      <div class="card" onclick="showModal()">
       </div>
 
-      <div class="card">
-        <div class="container">
-          <h4><b>------</b></h4>
-          <p>------</p>
-        </div>
+      <div class="card" onclick="showModal()">
       </div>
 
-      <div class="card">
-        <div class="container">
-          <h4><b>------</b></h4>
-          <p>------</p>
-        </div>
+      <div class="card" onclick="showModal()">
       </div>
 
     </div>
   </section>
+
+  <!-- 모달 -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <!-- <h2 id="modalTitle">Title</h2>
+      <p id="modalDesc">desc</p> -->
+    </div>
+  </div>
+
 </body>
 
 
+<footer>
+  <button id="upwardBtn">
+    <img id="upwardImg" src="./img/arrow_up.svg">
+  </button>
+</footer>
 </html>
