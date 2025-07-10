@@ -1,4 +1,5 @@
 html {
+  
   scroll-behavior: smooth;
 }
 
@@ -366,7 +367,6 @@ footer {
 footer p {
   margin-top: 100px;
   color: #aaa;              /* 연한 회색 */
-  opacity: 0.9;             /* 투명도 추가 (0~1, 숫자가 작을수록 더 연함) */
   font-size: 0.95em;        /* (선택) 글자 크기 살짝 줄이기 */
   letter-spacing: 0.02em;   /* (선택) 자간 살짝 넓히기 */
 }
